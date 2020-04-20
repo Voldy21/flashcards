@@ -3,6 +3,13 @@ const app = express();
 
 app.set('view engine', 'pug');
 
+let nameList = {
+    "Jonah": "Livingston",
+    "Barack": "Obama",
+    "Michelle": "Feifer",
+    "Whitney": "Houston",
+    "Billy": "Joel"
+};
 app.get("/", (req, res) =>{
     res.render('index');
 });
@@ -10,7 +17,7 @@ app.get("/", (req, res) =>{
 app.get("/cards", (req, res) =>{
     res.render('card', {
         prompt: "Who is buried in Grant's tomb?",
-        hint: "Think about whose tomb it is"
+        hint: "Think about whose tomb it is",
     });
 });
 
